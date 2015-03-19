@@ -29,27 +29,22 @@ public class Sorting {
 			
 			
 			if( type.equals("ppt") || type.equals("ptx") ){
-				
 				file.renameTo(new File( downloadPath + "/powerpoints/" + names[j] ) );
 				file.delete();
 			}
 			else if( type.equals("pdf") ){
-				
 				file.renameTo(new File( downloadPath + "/pdfs/" + names[j] ) );
 				file.delete();
 			}
 			else if(type.equals("ocx") || type.equals("doc") ){
-				
 				file.renameTo(new File( downloadPath + "/word/" + names[j] ) );
 				file.delete();
 			}
 			else if(type.equals("msi")){
-				
 				file.renameTo(new File( downloadPath + "/installers/" + names[j] ) );
 				file.delete();
 			}
 			else if(type.equals("zip")){
-				
 				file.renameTo(new File( downloadPath + "/zips/" + names[j] ) );
 				file.delete();
 			}
@@ -79,8 +74,7 @@ public class Sorting {
 			File dir = new File(downloadPath + "/" + names[i]);
 			
 			if( names[i].equals("folders") || names[i].equals("zips") || names[i].equals("pdfs") || names[i].equals("word") ||
-					names[i].equals("powerpoints") || names[i].equals("installers") || names[i].equals("miscellaneaous") ){
-				
+				names[i].equals("powerpoints") || names[i].equals("installers") || names[i].equals("miscellaneaous") ){
 				continue;
 			}
 			
@@ -113,7 +107,6 @@ public class Sorting {
 		for( int w = 0; w < out; w++){
 			
 			File c = new File( downloadPath + "/" + hold[w]);
-			
 			String[] cur = c.list();
 			
 			int x = cur.length;
