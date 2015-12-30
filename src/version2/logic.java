@@ -21,9 +21,12 @@ public class logic {
 	
 	
 	/**
-	 * This method finds chrome's default download folder location
+	 * This method finds chrome's default download folder location. It returns either 
+	 * an empty string or a non empty string depending on whether the folder exists.
+	 * 
+	 * @return - empty string for non existant folder and non empty for existing folder
 	 */
-	public static void downloadPath(){
+	public static String downloadPath(){
 		
 		String path = System.getProperty("user.home");
 		downloadPath = path + "\\Downloads";
@@ -31,7 +34,10 @@ public class logic {
 		downloads = new File( downloadPath);
 		
 		if( !(downloads.exists() && downloads.isDirectory()) ) {
-			
+			return "";
+		}
+		else{
+			return downloadPath;
 		}
 	}
 	
@@ -41,9 +47,10 @@ public class logic {
 	 * This method creates/identifies the 6 main category folders and it also 
 	 * lists all the files currently in the downloads folder
 	 * 
+	 * @param- The file path to the folder that is being sorted
 	 * @return- returns the list of files currently in the download folders
 	 */
-	public static String[] listFiles(){
+	public static String[] listFiles( String downloadPath ){
 		
 		downloads = new File(downloadPath);
 		
