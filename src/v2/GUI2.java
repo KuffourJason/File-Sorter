@@ -1,4 +1,4 @@
-package version2;
+package v2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
