@@ -5,7 +5,8 @@ import java.io.File;
 /**
  * @author jay
  * 
- * This class contains all the naming sorting method. It sorts files into folders depending on what they start with
+ * This class contains all the naming sorting method. It sorts files into folders depending on what letter
+ * or word they start with
  */
 public class NameSort extends Sorters{
 	

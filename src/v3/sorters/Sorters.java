@@ -1,7 +1,6 @@
 package v3.sorters;
 
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * @author jay
@@ -27,7 +26,6 @@ public abstract class Sorters {
 			this.filesToBeSorted = path.listFiles();
 			return true;
 		}
-		
 		return false;
 	}
 	
@@ -72,11 +70,42 @@ public abstract class Sorters {
 	 */
 	public abstract void sort();
 	
+	/**
+	 * This is the main method that is called when a folder is to be sorted. It
+	 * sorts and handles final cleanup
+	 */
+	public void sortDirectory(){
+		this.sort();
+		this.finalCleanUp();
+	}
+	
+	/**
+	 * This method handles deleting any empty directories in the main directory after
+	 * sorting is complete
+	 */
+	protected void finalCleanUp(){
+		
+		//if user specified whether empty directories should be deleted
+		if( this.delEmpDir){
+			File dir = new File(this.getDirPath());
+			File sList[] = dir.listFiles();			//gets the new list of files and folders in the directory
+			
+			//loops through all files and checks if it is a dir and empty
+			for( File l: sList){
+				if( l.isDirectory() && l.list().length==0){
+					l.delete();
+				}
+			}
+		}
+	}
 	
 	public static void main(String args[]){
-		Sorters test = new SizeSort();
-		test.setDelEmpDir(true);
+		Sorters test = new ExtSort();
 		test.setDirPath("C:/Users/jay/Desktop/yu");
-		test.sort();
+		test.setDelEmpDir(true);
+		((ExtSort) test).extensions();
+		String ne[] = {"database", "initialization", "executable", "", "", "", "", "", "", ""};
+		((ExtSort)test).setNames(ne);
+		test.sortDirectory();
 	}
 }

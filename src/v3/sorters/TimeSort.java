@@ -9,7 +9,10 @@ import java.util.Calendar;
  */
 public class TimeSort extends Sorters{
 	
-	private String months[] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+	private String months[] = {"January","February","March",
+								"April","May","June","July",
+								"August","September","October",
+								"November","December"};
 	private String sortType;
 	
 	
