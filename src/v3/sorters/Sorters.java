@@ -1,6 +1,8 @@
 package v3.sorters;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author jay
@@ -103,9 +105,17 @@ public abstract class Sorters {
 		Sorters test = new ExtSort();
 		test.setDirPath("C:/Users/jay/Desktop/yu");
 		test.setDelEmpDir(true);
-		((ExtSort) test).extensions();
-		String ne[] = {"database", "initialization", "executable", "", "", "", "", "", "", ""};
-		((ExtSort)test).setNames(ne);
+		Map<String, String> t = ((ExtSort) test).extensions();
+		
+		for( String f: t.keySet() ){
+			System.out.println(f);
+		}
+		
+		t.put("ddt", "database");
+		t.put("ini", "initialization");
+		t.put("exe", "executable");
+		
+		((ExtSort)test).setNames( (HashMap<String, String>)t);
 		test.sortDirectory();
 	}
 }
