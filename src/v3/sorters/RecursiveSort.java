@@ -1,5 +1,9 @@
 package v3.sorters;
 
+/**
+ * @author jay
+ *
+ */
 public class RecursiveSort extends Sorters{
 
 	private Sorters sortSub[];
@@ -8,6 +12,9 @@ public class RecursiveSort extends Sorters{
 		this.sortSub = subDir.clone();
 	}
 	
+	/* (non-Javadoc)
+	 * @see v3.sorters.Sorters#sort()
+	 */
 	@Override
 	public void sort() {
 		

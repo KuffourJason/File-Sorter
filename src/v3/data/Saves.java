@@ -1,24 +1,15 @@
 package v3.data;
 
-import java.io.File;
-
+/**
+ * @author jay
+ *
+ * This is a wrapper class for the json data used to save the users
+ * sorting preferences
+ */
 public class Saves {
 
-	 public static void main(String[] args) {
-	        String path = null;
-	        String osName = System.getProperty("os.name").toLowerCase();
-	        if (osName.indexOf("windows")>-1) {
-	            path = System.getenv("APPDATA");
-	        } else if (osName.indexOf("mac")>-1) {
-	            // get the env. variable for Mac..
-	            path = System.getenv("?");
-	            // etc. for Linux, Unix, Solaris..
-	        } else { //anything else
-	            path = System.getProperty("user.home");
-	        }
-	        File rootOfPath = new File(path);
-	        // create a sub-directory based on package name of main class..
-	        // perhaps prefixed with with java/appdata
-	        System.out.println(rootOfPath);
-	    }
+		private String name; //name of the saved sorting preference
+		
+		//Still need to think of way of storing the list of sorting options
+		//Save      : NAME, [ list of sorting options]
 }
