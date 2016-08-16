@@ -12,4 +12,7 @@ public class Saves {
 		
 		//Still need to think of way of storing the list of sorting options
 		//Save      : NAME, [ list of sorting options]
+		
+		//Extensions: [file extension, given name]
+		//History   : [DATE, FOLDER, sort method, time ]
 }

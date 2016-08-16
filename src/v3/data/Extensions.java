@@ -1,5 +1,6 @@
 package v3.data;
 
+import java.util.List;
 
 /**
  * @author jay
@@ -7,34 +8,24 @@ package v3.data;
  */
 public class Extensions {
 
-	private String fileExt; //the file extension of the file
-	private String reName;  //the type of the file extension
+	private List<ExtensionItem> extensions;
 	
-	/**
-	 * @return
-	 */
-	public String getFileExt() {
-		return fileExt;
-	}
-	
-	/**
-	 * @param fileExt
-	 */
-	public void setFileExt(String fileExt) {
-		this.fileExt = fileExt;
+
+	public Extensions(List<ExtensionItem> list){
+		this.extensions = list;
 	}
 	
 	/**
 	 * @return
 	 */
-	public String getReName() {
-		return reName;
+	public List<ExtensionItem> getExtensions() {
+		return extensions;
 	}
-	
+
 	/**
-	 * @param reName
+	 * @param extensions
 	 */
-	public void setReName(String reName) {
-		this.reName = reName;
+	public void setExtensions(List<ExtensionItem> extensions) {
+		this.extensions = extensions;
 	}
 }

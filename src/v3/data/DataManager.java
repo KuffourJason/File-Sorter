@@ -14,7 +14,6 @@ public class DataManager {
 	private File saves;
 	private static DataManager manager;
 	
-	
 	/**
 	 * 
 	 */
@@ -62,13 +61,22 @@ public class DataManager {
 	        path = System.getProperty("user.home");
 	    }
 
-	    System.out.println(path);
 		return path;
 	}
 	
-	
-	
-	public static void main(String args[]){
-		DataManager test =  DataManager.getDataManager();
+	public File getHistoryFile(){
+		return this.history;
 	}
+	
+	public File getExtensionsFile(){
+		return this.extensions;
+	}
+	
+	public File getSaveFile(){
+		return this.saves;
+	}
+	
+	
+	
+	
 }
