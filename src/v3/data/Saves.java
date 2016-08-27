@@ -1,5 +1,7 @@
 package v3.data;
 
+import java.util.List;
+
 /**
  * @author jay
  *
@@ -8,11 +10,25 @@ package v3.data;
  */
 public class Saves {
 
-		private String name; //name of the saved sorting preference
+		private List<SaveItem> saveItem; //list of user saved sorting preferences
 		
-		//Still need to think of way of storing the list of sorting options
 		//Save      : NAME, [ list of sorting options]
 		
-		//Extensions: [file extension, given name]
-		//History   : [DATE, FOLDER, sort method, time ]
+		public Saves(List<SaveItem> saveItem){
+			this.saveItem = saveItem;
+		}
+		
+		/**
+		 * @return - the list of user saved sorting prefereences
+		 */
+		public List<SaveItem> getSaveItem() {
+			return saveItem;
+		}
+
+		/**
+		 * @param saveItem - the updated list of user saved sorting preferences
+		 */
+		public void setSaveItem(List<SaveItem> saveItem) {
+			this.saveItem = saveItem;
+		}
 }

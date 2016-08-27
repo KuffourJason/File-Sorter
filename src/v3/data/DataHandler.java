@@ -3,18 +3,34 @@ package v3.data;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.*;
 
 
+/**
+ * @author jay
+ *
+ *This class is responsible for serializing and deserializing data to and from the installation directory
+ *
+ *
+ * @param <T> - Generic parameter. To be used with the wrapper classes that have a corresponding json file
+ * 				i.e Saves, Extensions and History
+ */
 public class DataHandler<T> {
 
-	private Gson converter;
-	private File savedData;
-	private T cl;
-	private Class<T> typeOfParameter;
+	private Gson converter;			//this is responsible for serializing and deserializing data
+	private File savedData;			//the file that contains the data
+	private T cl;					//the instance of the class which stores the data 
+	private Class<T> typeOfParameter;	//the class of the data
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param filename - the file to which data is to be serialized and deserialized to
+	 * @param tp - the class of data to be serialized and deserialized i.e Saves, History, Extensions
+	 */
 	public DataHandler(File filename, Class<T> tp){
 		
 		this.converter = new Gson();
@@ -22,11 +38,15 @@ public class DataHandler<T> {
 		this.typeOfParameter = tp;
 	}
 	
+	/**
+	 * @return - A instance of T populated with the data that was deserialized from the file
+	 */
 	public T getData(){
 		
 		try {
-			FileReader reader = new FileReader(this.savedData);
-			this.cl = this.converter.fromJson( reader, this.typeOfParameter );
+			//reads data from json file and converts to instance of class T
+			FileReader reader = new FileReader(this.savedData);		
+			this.cl = this.converter.fromJson( reader, this.typeOfParameter );	
 			reader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,10 +55,13 @@ public class DataHandler<T> {
 		return cl;
 	}
 	
+	/**
+	 * @param data - the instance of data to be serialized to the file
+	 */
 	public void saveData(T data){
 		
 		try {
-			
+			// converts instance of class T to json and writes to file
 			FileWriter writer = new FileWriter(this.savedData);
 			this.converter.toJson( data, writer );
 			writer.close();
@@ -73,6 +96,22 @@ public class DataHandler<T> {
 		e.setExtensions(fd);
 		test2.saveData(e);
 		
+		DataHandler<Saves> test3 = new DataHandler<Saves>(t.getSaveFile(), Saves.class);
+		
+		SaveOption so1 = new SaveOption("time", "", "", "");
+		SaveOption so2 = new SaveOption("name", "", "", "");
+		SaveOption so3 = new SaveOption("size", "", "", "");
+		
+		List<SaveOption> ls = new ArrayList<SaveOption>();
+		ls.add(so1);
+		ls.add(so2);
+		ls.add(so3);
+		
+		SaveItem si = new SaveItem("test", ls );
+		List<SaveItem> opi = new ArrayList<SaveItem>();
+		opi.add(si);
+		Saves s = new Saves(opi);
+		test3.saveData(s);
 	}
 	
 }
