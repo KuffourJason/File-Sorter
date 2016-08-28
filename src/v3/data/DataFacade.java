@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import v3.data.wrappers.ExtensionItem;
+import v3.data.wrappers.Extensions;
+import v3.data.wrappers.History;
+import v3.data.wrappers.HistoryItem;
+import v3.data.wrappers.Preferences;
+import v3.data.wrappers.SaveItem;
+import v3.data.wrappers.SaveOption;
+import v3.data.wrappers.Saves;
+
 /**
  * @author jay
  *
@@ -12,10 +21,12 @@ public class DataFacade {
 	private DataHandler<History> historyHandler;
 	private DataHandler<Saves> savesHandler;
 	private DataHandler<Extensions> extsHandler;
+	private DataHandler<Preferences> prefHandler;
 	
 	private Saves saves;
 	private History history;
 	private Extensions exts;
+	private Preferences prefs;
 	
 	/**
 	 * 
@@ -25,6 +36,7 @@ public class DataFacade {
 		this.historyHandler = new DataHandler<History>(manager.getHistoryFile(), History.class);
 		this.savesHandler   = new DataHandler<Saves>(manager.getSaveFile(), Saves.class);
 		this.extsHandler    = new DataHandler<Extensions>(manager.getExtensionsFile(), Extensions.class);
+		this.prefHandler    = new DataHandler<Preferences>(manager.getPreferencesFile(), Preferences.class);
 
 	}
 	
@@ -35,6 +47,7 @@ public class DataFacade {
 		this.history = this.historyHandler.getData();
 		this.saves   = this.savesHandler.getData();
 		this.exts    = this.extsHandler.getData();
+		this.prefs   = this.prefHandler.getData();
 	}
 	
 	/**
@@ -44,6 +57,7 @@ public class DataFacade {
 		this.extsHandler.saveData(this.exts);
 		this.savesHandler.saveData(this.saves);
 		this.historyHandler.saveData(this.history);
+		this.prefHandler.saveData(this.prefs);
 	}	
 	
 	/**
@@ -111,6 +125,30 @@ public class DataFacade {
 		}
 		
 		this.saves.setSaveItem(newList);
+	}
+	
+	/**
+	 * @return
+	 */
+	public HashMap<String, String> getPreferences(){
+		
+		HashMap<String, String> ret = new HashMap<String, String>();
+		
+		ret.put("saveHistory", this.prefs.getSaveHistory());
+		ret.put("deleteEmpty", this.prefs.getDeleteEmptyFolder() );
+		ret.put("sortSub", this.prefs.getSortSubFolder() );
+		
+		return ret;
+	}
+	
+	/**
+	 * @param prefer
+	 */
+	public void setPreferences(HashMap<String, String> prefer){
+		
+		this.prefs.setDeleteEmptyFolder(prefer.get("deleteEmpty"));
+		this.prefs.setSaveHistory("saveHistory");
+		this.prefs.setSortSubFolder("sortSub");
 	}
 	
 	public static void main(String args[] ){

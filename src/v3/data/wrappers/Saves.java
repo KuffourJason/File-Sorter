@@ -1,4 +1,4 @@
-package v3.data;
+package v3.data.wrappers;
 
 import java.util.List;
 

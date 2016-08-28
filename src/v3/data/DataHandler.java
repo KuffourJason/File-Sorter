@@ -8,6 +8,14 @@ import java.util.List;
 
 import com.google.gson.*;
 
+import v3.data.wrappers.ExtensionItem;
+import v3.data.wrappers.Extensions;
+import v3.data.wrappers.History;
+import v3.data.wrappers.HistoryItem;
+import v3.data.wrappers.SaveItem;
+import v3.data.wrappers.SaveOption;
+import v3.data.wrappers.Saves;
+
 
 /**
  * @author jay

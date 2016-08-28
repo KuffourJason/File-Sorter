@@ -8,11 +8,16 @@ import java.io.IOException;
  *
  * This class handles access to the program's app folder on the machine
  */
+/**
+ * @author jay
+ *
+ */
 public class DataManager {
 
 	private File extensions;	//file that contains the extension-name pair
 	private File history;		//file that contains the sorted folder history
 	private File saves;			//file that contains user defined sort methods
+	private File preferences;   //file that contains user preferences
 	private static DataManager manager;		//singleton instance for this class
 	
 	/**
@@ -29,11 +34,13 @@ public class DataManager {
 		this.extensions = new File(dir + "/Extensions.json");
 		this.history    = new File(dir + "/History.json");
 		this.saves      = new File(dir + "/Saves.json");
+		this.preferences = new File(dir + "/Preferences.json");
 		
 		try {
 			this.extensions.createNewFile();
 			this.saves.createNewFile();
 			this.history.createNewFile();
+			this.preferences.createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -89,7 +96,12 @@ public class DataManager {
 		return this.saves;
 	}
 	
-	
+	/**
+	 * @return - the preferences file
+	 */
+	protected File getPreferencesFile(){
+		return this.preferences;
+	}
 	
 	
 }

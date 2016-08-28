@@ -1,8 +1,6 @@
 package v3.sorters;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author jay
@@ -70,7 +68,7 @@ public abstract class Sorters {
 	/**
 	 * This is a an abstract method that must be implemented by the sub classes
 	 */
-	public abstract void sort();
+	protected abstract void sort();
 	
 	/**
 	 * This is the main method that is called when a folder is to be sorted. It
@@ -102,20 +100,8 @@ public abstract class Sorters {
 	}
 	
 	public static void main(String args[]){
-		Sorters test = new ExtSort();
+		Sorters test = new UnSort();
 		test.setDirPath("C:/Users/jay/Desktop/yu");
-		test.setDelEmpDir(true);
-		Map<String, String> t = ((ExtSort) test).extensions();
-		
-		for( String f: t.keySet() ){
-			System.out.println(f);
-		}
-		
-		t.put("ddt", "database");
-		t.put("ini", "initialization");
-		t.put("exe", "executable");
-		
-		((ExtSort)test).setNames( (HashMap<String, String>)t);
 		test.sortDirectory();
 	}
 }
