@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" language="jambi">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>639</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="selctDirectoryWidget">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="selectDirVlayout">
+         <item>
+          <widget class="QLabel" name="selectDirHeading">
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Select the folder to be sorted</string>
+           </property>
+           <property name="alignment">
+            <set>com.trolltech.qt.core.Qt.AlignmentFlag.AlignHCenter|com.trolltech.qt.core.Qt.AlignmentFlag.AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+          <widget class="QWidget" name="selectDirWidget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>600</width>
+             <height>0</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <layout class="QHBoxLayout" name="selectDirHlayout">
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="dirPrev">
+                <property name="text">
+                 <string>Previous</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="dirNext">
+                <property name="text">
+                 <string>Next</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="selectSubDir">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="selectSubDirVlayout">
+         <item>
+          <widget class="QLabel" name="selectSubDirHeading">
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Select the sub-folders to sort</string>
+           </property>
+           <property name="alignment">
+            <set>com.trolltech.qt.core.Qt.AlignmentFlag.AlignHCenter|com.trolltech.qt.core.Qt.AlignmentFlag.AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTreeView" name="treeView">
+           <property name="selectionMode">
+            <enum>com.trolltech.qt.gui.QAbstractItemView.SelectionMode.MultiSelection</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+          <widget class="QWidget" name="selectSubDirWidget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>600</width>
+             <height>0</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="selectSubDirHLayout">
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="subPrev">
+                <property name="text">
+                 <string>Previous</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="subNext">
+                <property name="text">
+                 <string>Next</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="selectSortMethod">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="selectSortVlayout">
+         <item>
+          <widget class="QLabel" name="sortHeading">
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Select the sort method</string>
+           </property>
+           <property name="alignment">
+            <set>com.trolltech.qt.core.Qt.AlignmentFlag.AlignHCenter|com.trolltech.qt.core.Qt.AlignmentFlag.AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListView" name="listView"/>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+          <widget class="QWidget" name="selectSortWidget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>600</width>
+             <height>0</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <layout class="QHBoxLayout" name="selectSortHlayout">
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="sortPrev">
+                <property name="text">
+                 <string>Previous</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="sortNext">
+                <property name="text">
+                 <string>Next</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="overview">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="overviewVLayout">
+         <item>
+          <widget class="QLabel" name="overviewHeading">
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+             <underline>false</underline>
+            </font>
+           </property>
+           <property name="text">
+            <string>Overview</string>
+           </property>
+           <property name="alignment">
+            <set>com.trolltech.qt.core.Qt.AlignmentFlag.AlignHCenter|com.trolltech.qt.core.Qt.AlignmentFlag.AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTreeView" name="treeView_2"/>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="delCheckbox">
+           <property name="text">
+            <string>Delete empty folders after sorting has been completed</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+          <widget class="QWidget" name="overviewWidget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>600</width>
+             <height>0</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="overviewHlayout">
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="overviewPrev">
+                <property name="text">
+                 <string>Previous</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item alignment="Qt::AlignBottom">
+               <widget class="QPushButton" name="overviewNext">
+                <property name="text">
+                 <string>Save</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

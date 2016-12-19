@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" language="jambi">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>587</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	background-color: white;
+	border: 1.3px solid rgba(0,0,0,150);
+	border-radius: 3px;
+    
+	font: 10pt &quot;Calibri&quot;;
+}
+
+QPushButton:hover{
+	background-color: rgba(192, 192, 192, 100);
+}
+
+QPushButton:pressed{
+	border-color: rgba(0,0,0,250);
+    background-color: rgba(192, 192, 192, 255);
+}
+
+#centralwidget{
+	background-color: white;
+}
+
+QListWidget{
+	border: 1px solid black;
+}
+
+QListWidget:hover{
+	border: 2px solid black;
+	background-color: rgba(0, 0, 0, 10);
+}
+
+
+QMenuBar{
+	border: 1px solid rgba(0,0,0, 10);
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+
+QStatusBar{
+	background-color: rgba(0,0,0, 10);
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="mainLayoutWidget" native="true">
+      <layout class="QGridLayout" name="gridLayout" columnstretch="0">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="mainLayout" rowstretch="0" columnstretch="0,3,0,1,0">
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="1">
+          <widget class="QWidget" name="historyWidget" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QVBoxLayout" name="historyLayout">
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>25</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="historyLabel">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>18</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>History</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QListWidget" name="listWidget"/>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>53</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="speedSortLabel">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>18</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                  <kerning>true</kerning>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Speed Sort</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QListWidget" name="listWidget_2"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QWidget" name="buttonWidget" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="buttonLayout">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <spacer name="blvsp1">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.MinimumExpanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>18</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="newSort">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Sort New Folder</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="blsp2">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="newPref">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>New Sort Option</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="blvsp3">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="newExt">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Add New Extension</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="blvsp4">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="newSpeedSort">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Add New Speed Sort</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="blvspLast">
+                <property name="orientation">
+                 <enum>com.trolltech.qt.core.Qt.Orientation.Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>50</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>com.trolltech.qt.core.Qt.Orientation.Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>com.trolltech.qt.gui.QSizePolicy.Policy.Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>713</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
