@@ -2,8 +2,6 @@
 
   A desktop application, developed in Java, to sort the files in a directory according its name.
 
-##### Table of Contents  
-
 * [Background](#headers)  
 * [Versioning](#headers) <br/>
   * [Version 1.0](#headers) <br/>
@@ -14,7 +12,10 @@
 <a name="headers"/>
 ## Background
 
-  Testing 
+    This project began, in the summer of 2014, as a simple Java program meant to sort google chrome's download folder 
+    according to a file's extension type. It was meant as a way to apply and enhance my Java skills I learnt so far in 
+    university ( 2nd year ). As time progressed and my programming knowledge expanded, I decided to build upon this 
+    program and develop it into a desktop application. 
 
 <a name="headers"/>
 ## Versioning
