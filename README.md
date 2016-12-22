@@ -88,9 +88,9 @@
 * The overall application is designed using the MVC design pattern
 * The model consists of the data and sorters packages
   * Classes in the data package are responsible for loading and saving data to and from the system. It was designed using the Facade      pattern 
-   * Classes in the sorters package contain the basic sorting methods that can be used. It was designed using both the template design patter and the composite pattern
- *  The View consists of the UI package and contains all the code related to the user interface. The classes in this package are code using the QtJambi framework
- * The controller has yet to be implemented
+  * Classes in the sorters package contain the basic sorting methods that can be used. It was designed using both the template design patter and the composite pattern
+*  The View consists of the UI package and contains all the code related to the user interface. The classes in this package are code using the QtJambi framework
+* The controller has yet to be implemented
 
 <a name="headers"/>
 #### Status
